@@ -9,6 +9,32 @@ $('.header-slider').slick({
         }
     ]
 });
+//slider-blog
+$('.slider-blog').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    variableWidth: true,
+    responsive:[
+        {
+            breakpoint:1250,
+            settings:{
+                slidesToShow: 2,
+                slidesToScroll:1,
+                variableWidth: false,
+            }
+        },
+        {
+            breakpoint:830,
+            settings:{
+                arrows:false,
+                slidesToShow: 1,
+                slidesToScroll:1,
+                variableWidth: false,
+            }
+        }
+    ]
+});
+
 //filter content + active-menu
 const listBtnAll = document.querySelectorAll('.work-project-btn'); 
 const listBtn = document.querySelector('.work-project-btn-wrapper'),// 1.Получаем кнопки по котрым кликнули
