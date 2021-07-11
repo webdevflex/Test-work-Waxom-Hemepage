@@ -1,41 +1,4 @@
-$('.header-slider').slick({
-    dots: true,
-    responsive:[
-        {
-            breakpoint:750,
-            settings:{
-                arrows:false,
-            }
-        }
-    ]
-});
-//slider-blog
-$('.slider-blog').slick({
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    variableWidth: true,
-    responsive:[
-        {
-            breakpoint:1250,
-            settings:{
-                slidesToShow: 2,
-                slidesToScroll:1,
-                variableWidth: false,
-            }
-        },
-        {
-            breakpoint:830,
-            settings:{
-                arrows:false,
-                slidesToShow: 1,
-                slidesToScroll:1,
-                variableWidth: false,
-            }
-        }
-    ]
-});
-
-//filter content + active-menu
+// filter content + active-menu
 const listBtnAll = document.querySelectorAll('.work-project-btn'); 
 const listBtn = document.querySelector('.work-project-btn-wrapper'),// 1.Получаем кнопки по котрым кликнули
     items = document.querySelectorAll('.work-project-content-item')//получаем наши блоки 
@@ -127,6 +90,54 @@ function toggleVideoStatus(){
 }
 playBtn.addEventListener('click',toggleVideoStatus)
 
-// playBtn.addEventListener('click',function(){
-//     wrapperVideo.play();
-//   });
+playBtn.addEventListener('click',function(){
+    wrapperVideo.play();
+  });
+
+//swiper-slider
+const mySwiper = new Swiper('.header-slider-container',{
+    
+    navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+
+    },
+    pagination:{
+        el:'.swiper-pagination',
+        //булеты клик
+        clickable:true,
+    }
+});
+
+
+
+const mySwiper2 = new Swiper('.slider-blog',{
+    slidesPerView: 3,//колиство показов слайда
+    spaceBetween:30,//отступы между слайдами
+    slidesPerGroup:1,//количество прокрутов
+    navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev',
+
+    },
+    breakpoints:{
+    1250:{
+        slidesPerView: 3,
+        spaceBetween:30,
+        },
+        820:{
+            slidesPerView: 2,
+          
+            },
+            320:{
+                slidesPerView: 1,
+              
+                }
+    }
+});
+
+// breakpoints:{
+//     320:{
+
+//     }
+// }
